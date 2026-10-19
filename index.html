@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Javier Cortés Vidal · Sistemas y desarrollo</title>
+  <meta name="description" content="Portfolio y CV de Javier Cortés Vidal, técnico de sistemas y desarrollador junior en Sevilla: proyectos, conocimientos y trayectoria.">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0c1120" media="(prefers-color-scheme: dark)">
+  <meta property="og:title" content="Javier Cortés Vidal · Sistemas y desarrollo">
+  <meta property="og:description" content="Técnico de sistemas y desarrollador junior en Sevilla. Proyectos, conocimientos y trayectoria.">
+  <meta property="og:type" content="profile">
+  <meta property="og:image" content="assets/foto.jpg">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%231f2b4d'/%3E%3Ctext x='32' y='45' font-family='Georgia,serif' font-size='36' text-anchor='middle' fill='%23ffffff'%3EJ%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/estilos.css">
+  <script>
+    // Tema y clase js antes de pintar, para evitar parpadeos.
+    (function () {
+      var d = document.documentElement;
+      d.classList.add('js');
+      try {
+        var tema = localStorage.getItem('tema');
+        if (tema === 'claro' || tema === 'oscuro') d.dataset.theme = tema === 'oscuro' ? 'dark' : 'light';
+      } catch (e) {}
+      // Si app.js no llega a montar la página (falta un archivo, error), se muestra el respaldo.
+      document.addEventListener('DOMContentLoaded', function () {
+        if (!d.classList.contains('listo')) d.classList.add('fallo');
+      });
+    })();
+  </script>
+</head>
+<body>
+  <a class="saltar" href="#contenido" data-texto="saltar">Saltar al contenido</a>
+
+  <header class="cabecera">
+    <a class="marca" href="#inicio">Javier Cortés Vidal</a>
+    <nav class="cabecera__enlaces" aria-label="Principal">
+      <a class="solo-ancho" href="#proyectos" data-texto="navProyectos">Proyectos</a>
+      <a href="assets/cv/CV_Javier_Cortes_Vidal_ES.pdf" data-cv data-texto="navCv">CV</a>
+      <button type="button" class="enlace-boton" data-accion="idioma">EN</button>
+      <button type="button" class="enlace-boton" data-accion="tema">Oscuro</button>
+    </nav>
+  </header>
+
+  <main id="contenido">
+    <section id="inicio" class="portada" aria-labelledby="titular"></section>
+
+    <section class="respaldo" aria-labelledby="titulo-respaldo">
+      <h2 id="titulo-respaldo">Javier Cortés Vidal</h2>
+      <p>Técnico de sistemas y desarrollador junior en Sevilla. Systems technician &amp; developer in Seville, Spain.</p>
+      <p>Si no ves el resto de la página, puede que JavaScript esté desactivado. Puedes descargar el CV o escribirme directamente.</p>
+      <ul>
+        <li><a href="assets/cv/CV_Javier_Cortes_Vidal_ES.pdf">CV en PDF (español)</a> · <a href="assets/cv/CV_Javier_Cortes_Vidal_EN.pdf" lang="en">CV as PDF (English)</a></li>
+        <li><a href="mailto:cortesvidaljavier00@gmail.com">cortesvidaljavier00@gmail.com</a></li>
+        <li><a href="https://github.com/EnderFairXD">GitHub: EnderFairXD</a></li>
+        <li><a href="https://www.linkedin.com/in/javier-cort%C3%A9s-vidal-915942361">LinkedIn</a></li>
+      </ul>
+    </section>
+
+    <section id="sobre-mi" class="sobre-mi" aria-labelledby="titulo-sobre-mi"></section>
+    <section id="trayectoria" class="trayectoria" aria-labelledby="titulo-trayectoria"></section>
+    <section id="conocimientos" class="conocimientos" aria-labelledby="titulo-conocimientos"></section>
+    <section id="proyectos" class="proyectos" aria-labelledby="titulo-proyectos"></section>
+    <div id="destacados" class="destacados"></div>
+    <section id="otros" class="otros" aria-labelledby="titulo-otros"></section>
+    <section id="numeros" class="numeros" aria-labelledby="titulo-numeros"></section>
+    <section id="contacto" class="contacto" aria-labelledby="titulo-contacto"></section>
+  </main>
+
+  <footer id="pie" class="pie"></footer>
+
+  <script src="js/repos.js"></script>
+  <script src="js/precios.js"></script>
+  <script src="js/datos.js"></script>
+  <script src="js/util.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
