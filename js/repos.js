@@ -1,6 +1,6 @@
 // Generado por actualizar-repos.sh — no editar a mano.
 window.REPOS = {
-  "generado": "2026-10-19",
+  "generado": "2026-10-20",
   "usuario": "EnderFairXD",
   "repos": [
     {
@@ -21,7 +21,7 @@ window.REPOS = {
         "price-tracker"
       ],
       "creado": "2026-09-21",
-      "actualizado": "2026-10-19"
+      "actualizado": "2026-10-20"
     },
     {
       "nombre": "portapapeles-universal-p2p",

@@ -32,7 +32,7 @@ if [[ "$SOLO" != "precios" ]]; then
       generado: $hoy,
       usuario: $usuario,
       repos: [ .[]
-        | select(.name != $usuario)
+        | select(.name != $usuario and .name != ($usuario + ".github.io"))
         | {
             nombre: .name,
             descripcion: (if (.description // "") == "" then null else .description end),

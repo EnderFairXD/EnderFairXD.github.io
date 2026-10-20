@@ -1,6 +1,6 @@
 // Generado por actualizar-repos.sh — no editar a mano.
 window.PRECIOS = {
-  "generado": "2026-10-19",
+  "generado": "2026-10-20",
   "fuente": "https://enderfairxd.github.io/rastreador-de-precios/historico.json",
   "historico": {
     "gesture": [
@@ -93,13 +93,18 @@ window.PRECIOS = {
         "fecha": "2026-10-19",
         "mejor": 1063.47,
         "tienda": "Office Logix Shop (reacond. EE. UU.)"
+      },
+      {
+        "fecha": "2026-10-20",
+        "mejor": 1063.47,
+        "tienda": "Office Logix Shop (reacond. EE. UU.)"
       }
     ],
     "tygr": [
       {
         "fecha": "2026-10-04",
-        "mejor": 109.0,
-        "tienda": "Beyerdynamic B-Stock (UE)"
+        "mejor": 158.0,
+        "tienda": "Thomann (DE)"
       },
       {
         "fecha": "2026-10-05",
@@ -173,6 +178,11 @@ window.PRECIOS = {
       },
       {
         "fecha": "2026-10-19",
+        "mejor": 158.0,
+        "tienda": "Thomann (DE)"
+      },
+      {
+        "fecha": "2026-10-20",
         "mejor": 158.0,
         "tienda": "Thomann (DE)"
       }

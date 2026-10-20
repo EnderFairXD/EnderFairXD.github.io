@@ -12,7 +12,7 @@ test('repos.js incluye los repos públicos', () => {
 
 test('repos.js no contiene repos privados ni el de perfil', () => {
   const nombres = REPOS.repos.map((r) => r.nombre);
-  for (const prohibido of ['telegrafo-de-bolsillo', 'nfc-toolkit', 'EnderFairXD']) {
+  for (const prohibido of ['telegrafo-de-bolsillo', 'nfc-toolkit', 'EnderFairXD', 'EnderFairXD.github.io']) {
     assert.ok(!nombres.includes(prohibido), `aparece ${prohibido}`);
   }
 });

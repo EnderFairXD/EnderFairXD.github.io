@@ -364,11 +364,12 @@ window.DATOS = {
         { es: 'Lee JSON de Shopify, JSON-LD de schema.org y la API de eBay en vez de raspar HTML frágil.', en: 'Reads Shopify JSON, schema.org JSON-LD and the eBay API instead of scraping brittle HTML.' },
         { es: 'Nunca publica vacío: si una tienda falla conserva su último precio marcado como obsoleto; si fallan todas, el workflow se pone en rojo.', en: 'Never publishes empty data: if a shop fails its last price is kept and marked stale; if all fail, the workflow goes red.' },
         { es: 'Frecuencia adaptable: diaria, y cada 4 horas en temporada de rebajas.', en: 'Adaptive schedule: daily, and every 4 hours during sales season.' },
+        { es: 'Histórico coherente: al retirar una tienda se recalcula el mínimo de cada día con lo que de verdad se podía comprar (los auriculares pasaron de un falso mínimo de 109 € a 158 €).', en: 'Consistent history: when a shop is dropped, each day’s minimum is recalculated from what could actually be bought (the headset went from a false 109 € low to 158 €).' },
         { es: 'Precios objetivo guardados como secretos del repositorio, fuera del código y de la web.', en: 'Target prices stored as repository secrets, out of the code and the website.' },
       ],
       cifras: [
         { valor: '24/7', etiqueta: { es: 'sin servidor propio', en: 'no server of my own' } },
-        { valor: '3', etiqueta: { es: 'regiones de tiendas', en: 'shop regions' } },
+        { valor: '2', etiqueta: { es: 'productos vigilados', en: 'products tracked' } },
       ],
       stack: ['Python', 'GitHub Actions', 'PWA', 'Streamlit', 'Telegram API'],
       fragmento: { tipo: 'precios' },
