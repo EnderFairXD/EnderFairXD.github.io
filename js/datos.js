@@ -64,6 +64,16 @@ window.DATOS = {
     capturaCobertura: { es: 'Municipios coloreados según su distancia a la estación más cercana', en: 'Municipalities shaded by distance to the nearest station' },
     capturaSimulacion: { es: 'Estación simulada con su radio y los municipios que ganaría', en: 'Simulated station with its radius and the municipalities it would cover' },
     otros: { es: 'Más proyectos', en: 'More projects' },
+    sinProbar: { es: 'Sin probar en real', en: 'Not field-tested' },
+    codigoAbierto: { es: 'Código abierto', en: 'Open source' },
+    codigoAbiertoIntro: {
+      es: 'Aportaciones a proyectos de otros. Las cuento como son: un informe es un informe, no código.',
+      en: 'Contributions to other people’s projects, described as they are: a report is a report, not code.',
+    },
+    tipoInforme: { es: 'Informe de fallo', en: 'Bug report' },
+    tipoCodigo: { es: 'Código', en: 'Code' },
+    tipoDocumentacion: { es: 'Documentación', en: 'Documentation' },
+    verAportacion: { es: 'Ver en GitHub', en: 'View on GitHub' },
     numerosTitulo: [
       { es: 'Lo que hay', en: 'What is there' },
       { es: 'en mi GitHub.', en: 'on my GitHub.' },
@@ -205,7 +215,7 @@ window.DATOS = {
         en: 'Android apps with Expo / React Native and TypeScript using native modules (camera, OCR, biometrics, media library), plus Flutter with Dart. On desktop, Tauri with Rust. I ship apps without a store: a workflow builds and signs the APK, publishes it to GitHub Releases and the app updates itself.',
       },
       tecnologias: ['TypeScript', 'React Native', 'Expo', 'Flutter', 'Dart', 'Tauri', 'Rust', 'Android'],
-      repos: ['boveda-garantias', 'galeria-personal', 'boveda-burocratica', 'portapapeles-universal-p2p', 'CluedoHelper'],
+      repos: ['boveda-garantias', 'galeria-personal', 'boveda-burocratica', 'portapapeles-universal-p2p'],
     },
     {
       id: 'ia',
@@ -298,19 +308,20 @@ window.DATOS = {
         { es: 'Emparejamiento por QR y cifrado Noise IK: el móvil solo habla con el PC que escaneó y el PC solo acepta móviles emparejados.', en: 'QR pairing and Noise IK encryption: the phone only talks to the PC it scanned and the PC only accepts paired phones.' },
         { es: 'Imágenes y capturas por el mismo canal cifrado de archivos, con tope de 20 MB. Las capturas del móvil se envían al volver a la app, porque Android no deja vigilarlas en segundo plano.', en: 'Images and screenshots travel over the same encrypted file channel, capped at 20 MB. Phone screenshots are sent when you return to the app, because Android does not allow watching them in the background.' },
         { es: 'Cifrado nativo de Android (ChaCha20-Poly1305) para los archivos: de unos 0,5 a unos 4 MiB/s medidos por USB.', en: 'Android’s native ChaCha20-Poly1305 for file transfers: from about 0.5 to about 4 MiB/s measured over USB.' },
+        { es: 'Bluetooth por RFCOMM entre dispositivos ya vinculados, en PC Linux y Windows y en Android: la dirección Bluetooth del PC viaja en el mismo QR del emparejamiento. Implementado y con tests, pendiente de probar con hardware real.', en: 'Bluetooth over RFCOMM between already-bonded devices, on Linux and Windows PCs and on Android: the PC’s Bluetooth address travels in the same pairing QR code. Implemented and tested in code, not yet field-tested on real hardware.' },
         { es: 'De momento solo Android, con las limitaciones de segundo plano de Android 10+ documentadas con honestidad.', en: 'Android only for now, with Android 10+ background limits documented honestly.' },
       ],
       cifras: [
         { valor: '≈4', etiqueta: { es: 'MiB/s por USB', en: 'MiB/s over USB' } },
         { valor: '0', etiqueta: { es: 'servidores en la nube', en: 'cloud servers' } },
       ],
-      stack: ['TypeScript', 'Expo', 'Tauri', 'Rust', 'Kotlin', 'Noise IK', 'mDNS'],
+      stack: ['TypeScript', 'Expo', 'Tauri', 'Rust', 'Kotlin', 'Noise IK', 'mDNS', 'Bluetooth RFCOMM'],
       fragmento: {
         tipo: 'transportes',
         elementos: [
           { nombre: { es: 'WiFi / LAN · mDNS + TCP', en: 'WiFi / LAN · mDNS + TCP' }, listo: true },
           { nombre: { es: 'Cable USB · túnel ADB', en: 'USB cable · ADB tunnel' }, listo: true },
-          { nombre: { es: 'Bluetooth · BLE / Classic', en: 'Bluetooth · BLE / Classic' }, listo: false },
+          { nombre: { es: 'Bluetooth · RFCOMM', en: 'Bluetooth · RFCOMM' }, listo: 'probando' },
         ],
       },
       areas: ['movil', 'sistemas', 'ciber'],
@@ -449,16 +460,26 @@ window.DATOS = {
       areas: ['movil', 'ciber'],
     },
     {
-      repo: 'CluedoHelper',
-      nombre: 'Cluedo Helper',
-      descripcion: { es: 'App en Flutter que cruza sospechosos, armas y lugares y deduce sola durante la partida.', en: 'Flutter app that cross-checks suspects, weapons and rooms and deduces for you during a game.' },
-      areas: ['movil'],
-    },
-    {
       repo: 'BasicWebsocketsWeb',
       nombre: 'WebSocket Broadcast',
       descripcion: { es: 'Servidor WebSocket en Node.js que retransmite cada mensaje a todos los clientes conectados.', en: 'Node.js WebSocket server that relays every message to all connected clients.' },
       areas: ['backend', 'sistemas'],
+    },
+  ],
+
+  codigoAbierto: [
+    {
+      proyecto: 'Pop!_OS · COSMIC',
+      repo: 'pop-os/xdg-desktop-portal-cosmic',
+      tipo: 'informe',
+      fecha: '2026-10',
+      url: 'https://github.com/pop-os/xdg-desktop-portal-cosmic/issues/384#issuecomment-6295203531',
+      titulo: { es: 'Compartir pantalla se congela tras el primer fotograma', en: 'Screen sharing freezes after the first frame' },
+      resumen: {
+        es: 'Confirmé el fallo con otra aplicación (Discord y Vesktop) y una GPU NVIDIA de escritorio, con las versiones exactas de cada componente y el error del protocolo Wayland (ext_image_copy_capture) repetido en los registros. Demostré que no era exclusivo de las videollamadas, sino del portal de captura de COSMIC.',
+        en: 'I confirmed the bug with another app (Discord and Vesktop) on a desktop NVIDIA GPU, with exact versions of every component and the Wayland protocol error (ext_image_copy_capture) repeated in the logs. I showed it was not specific to video-call apps but to COSMIC’s capture portal.',
+      },
+      tecnologias: ['Wayland', 'PipeWire', 'xdg-desktop-portal', 'NVIDIA', 'Linux'],
     },
   ],
 

@@ -83,3 +83,12 @@ test('cada destacado tiene nombre corto y al menos una cifra', () => {
     assert.ok(d.cifras.length > 0, d.repo);
   }
 });
+
+test('cada aportación de código abierto enlaza a GitHub y dice qué tipo de aportación es', () => {
+  assert.ok(DATOS.codigoAbierto.length > 0);
+  for (const c of DATOS.codigoAbierto) {
+    assert.match(c.url, /^https:\/\/github\.com\/[\w.-]+\/[\w.-]+\/(issues|pull)\/\d+/);
+    assert.ok(['informe', 'codigo', 'documentacion'].includes(c.tipo), c.tipo);
+    assert.match(c.fecha, /^\d{4}-\d{2}$/);
+  }
+});

@@ -1,6 +1,6 @@
 // Generado por actualizar-repos.sh — no editar a mano.
 window.REPOS = {
-  "generado": "2026-10-20",
+  "generado": "2026-10-27",
   "usuario": "EnderFairXD",
   "repos": [
     {
@@ -21,7 +21,7 @@ window.REPOS = {
         "price-tracker"
       ],
       "creado": "2026-09-21",
-      "actualizado": "2026-10-20"
+      "actualizado": "2026-10-27"
     },
     {
       "nombre": "portapapeles-universal-p2p",
@@ -45,7 +45,26 @@ window.REPOS = {
         "clipboard"
       ],
       "creado": "2026-09-22",
-      "actualizado": "2026-10-19"
+      "actualizado": "2026-10-27"
+    },
+    {
+      "nombre": "galeria-personal",
+      "descripcion": "Galería personal para Android: álbumes propios sin duplicar archivos y autoactualización desde GitHub Releases",
+      "url": "https://github.com/EnderFairXD/galeria-personal",
+      "web": null,
+      "lenguaje": "TypeScript",
+      "lenguajes": [
+        "JavaScript",
+        "TypeScript"
+      ],
+      "topics": [
+        "react-native",
+        "expo",
+        "typescript",
+        "android"
+      ],
+      "creado": "2026-09-27",
+      "actualizado": "2026-10-21"
     },
     {
       "nombre": "GEOgis-SimpleWeb",
@@ -70,25 +89,6 @@ window.REPOS = {
       ],
       "creado": "2026-09-20",
       "actualizado": "2026-10-15"
-    },
-    {
-      "nombre": "galeria-personal",
-      "descripcion": "Galería personal para Android: álbumes propios sin duplicar archivos y autoactualización desde GitHub Releases",
-      "url": "https://github.com/EnderFairXD/galeria-personal",
-      "web": null,
-      "lenguaje": "TypeScript",
-      "lenguajes": [
-        "JavaScript",
-        "TypeScript"
-      ],
-      "topics": [
-        "react-native",
-        "expo",
-        "typescript",
-        "android"
-      ],
-      "creado": "2026-09-27",
-      "actualizado": "2026-10-14"
     },
     {
       "nombre": "boveda-burocratica",
@@ -235,30 +235,6 @@ window.REPOS = {
       "topics": [
         "nodejs",
         "websockets"
-      ],
-      "creado": "2026-09-20",
-      "actualizado": "2026-10-14"
-    },
-    {
-      "nombre": "CluedoHelper",
-      "descripcion": "App Flutter para gestionar las cartas y automatizar las deducciones en partidas de Cluedo.",
-      "url": "https://github.com/EnderFairXD/CluedoHelper",
-      "web": null,
-      "lenguaje": "Dart",
-      "lenguajes": [
-        "Kotlin",
-        "Swift",
-        "Objective-C",
-        "Dart",
-        "CMake",
-        "C++",
-        "C",
-        "HTML"
-      ],
-      "topics": [
-        "flutter",
-        "dart",
-        "mobile"
       ],
       "creado": "2026-09-20",
       "actualizado": "2026-10-14"
