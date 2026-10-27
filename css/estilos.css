@@ -515,6 +515,23 @@ button { font: inherit; color: inherit; }
 }
 
 /* ==========================================================================
+   Código abierto: aportaciones a proyectos de otros
+   ========================================================================== */
+.codigo-abierto { padding: var(--seccion) var(--m) 0; }
+.codigo-abierto__cuerpo { margin-left: 22%; max-width: 860px; }
+.codigo-abierto__intro { color: var(--muted); font-size: var(--step-body); margin-bottom: 32px; max-width: 60ch; }
+.aportes { display: grid; gap: 40px; }
+.aporte { display: grid; gap: 10px; }
+.aporte__cabeza { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px 24px; font-size: 15px; }
+.aporte__proyecto { font-weight: 500; }
+.aporte__meta { color: var(--muted); font-variant-numeric: tabular-nums; }
+.aporte__titulo { font-family: var(--fuente); font-size: var(--step-lead); font-weight: 400; line-height: 1.25; letter-spacing: -0.01em; }
+.aporte__resumen { font-size: var(--step-body); line-height: 1.6; max-width: 66ch; }
+.aporte__pie { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px; font-size: 15px; color: var(--muted); }
+.aporte__pie a { color: var(--ink); font-weight: 500; }
+@media (max-width: 900px) { .codigo-abierto__cuerpo { margin-left: 0; } }
+
+/* ==========================================================================
    En números: columna alineada en la coma
    ========================================================================== */
 .numeros {

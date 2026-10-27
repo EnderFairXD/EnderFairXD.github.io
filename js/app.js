@@ -205,10 +205,10 @@
       const filas = f.elementos
         .map(
           (e, i) => `
-          <li class="${e.listo ? '' : 'pendiente'}">
+          <li class="${e.listo === true ? '' : 'pendiente'}">
             <span class="orden">${i + 1}</span>
             <span>${tr(e.nombre)}</span>
-            <span class="estado${e.listo ? '' : ' estado--pendiente'}">${ui(e.listo ? 'implementado' : 'pendiente')}</span>
+            <span class="estado${e.listo === true ? '' : ' estado--pendiente'}">${ui(e.listo === true ? 'implementado' : e.listo === 'probando' ? 'sinProbar' : 'pendiente')}</span>
           </li>`,
         )
         .join('');
@@ -297,6 +297,31 @@
     return `
       <h2 class="titulo-medio otros__titulo" id="titulo-otros" ${revelar(0)}>${ui('otros')}</h2>
       <ul class="otros__lista">${filas}</ul>`;
+  }
+
+  function codigoAbiertoHtml() {
+    const tipos = { informe: 'tipoInforme', codigo: 'tipoCodigo', documentacion: 'tipoDocumentacion' };
+    const filas = DATOS.codigoAbierto
+      .map(
+        (c, i) => `
+        <li class="aporte" ${revelar(i + 1)}>
+          <div class="aporte__cabeza">
+            <p class="aporte__proyecto">${escapar(c.proyecto)} · <span translate="no">${escapar(c.repo)}</span></p>
+            <p class="aporte__meta">${ui(tipos[c.tipo])} · ${escapar(c.fecha)}</p>
+          </div>
+          <h3 class="aporte__titulo">${tr(c.titulo)}</h3>
+          <p class="aporte__resumen">${tr(c.resumen)}</p>
+          <p class="aporte__pie"><span translate="no">${c.tecnologias.map(escapar).join(' · ')}</span>
+            <a href="${escapar(c.url)}" ${externo}>${ui('verAportacion')} ↗</a></p>
+        </li>`,
+      )
+      .join('');
+    return `
+      <h2 class="titulo-medio" id="titulo-codigo-abierto" ${revelar(0)}>${ui('codigoAbierto')}</h2>
+      <div class="codigo-abierto__cuerpo">
+        <p class="codigo-abierto__intro" ${revelar(0)}>${ui('codigoAbiertoIntro')}</p>
+        <ul class="aportes">${filas}</ul>
+      </div>`;
   }
 
   function numeros() {
@@ -567,6 +592,7 @@
     $('#proyectos').innerHTML = nombresDeProyectos();
     $('#destacados').innerHTML = destacadosHtml();
     $('#otros').innerHTML = otrosHtml();
+    $('#codigo-abierto').innerHTML = codigoAbiertoHtml();
     $('#numeros').innerHTML = numeros();
     $('#contacto').innerHTML = contacto();
     $('#pie').innerHTML = pie();
