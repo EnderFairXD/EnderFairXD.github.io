@@ -1,6 +1,6 @@
 // Generado por actualizar-repos.sh — no editar a mano.
 window.REPOS = {
-  "generado": "2026-10-27",
+  "generado": "2026-11-08",
   "usuario": "EnderFairXD",
   "repos": [
     {
@@ -21,7 +21,48 @@ window.REPOS = {
         "price-tracker"
       ],
       "creado": "2026-09-21",
-      "actualizado": "2026-10-27"
+      "actualizado": "2026-11-08"
+    },
+    {
+      "nombre": "llm-agent-prompt-injection-lab",
+      "descripcion": "Building an LLM email agent, attacking it with indirect prompt injection, and measuring which defenses actually work.",
+      "url": "https://github.com/EnderFairXD/llm-agent-prompt-injection-lab",
+      "web": null,
+      "lenguaje": "Python",
+      "lenguajes": [
+        "Python",
+        "Shell"
+      ],
+      "topics": [
+        "ai-agents",
+        "cybersecurity",
+        "homelab",
+        "llm-security",
+        "ollama",
+        "prompt-injection",
+        "red-team"
+      ],
+      "creado": "2026-11-08",
+      "actualizado": "2026-11-08"
+    },
+    {
+      "nombre": "galeria-personal",
+      "descripcion": "Galería personal para Android: álbumes propios sin duplicar archivos y autoactualización desde GitHub Releases",
+      "url": "https://github.com/EnderFairXD/galeria-personal",
+      "web": null,
+      "lenguaje": "TypeScript",
+      "lenguajes": [
+        "JavaScript",
+        "TypeScript"
+      ],
+      "topics": [
+        "react-native",
+        "expo",
+        "typescript",
+        "android"
+      ],
+      "creado": "2026-09-27",
+      "actualizado": "2026-11-05"
     },
     {
       "nombre": "portapapeles-universal-p2p",
@@ -46,25 +87,6 @@ window.REPOS = {
       ],
       "creado": "2026-09-22",
       "actualizado": "2026-10-27"
-    },
-    {
-      "nombre": "galeria-personal",
-      "descripcion": "Galería personal para Android: álbumes propios sin duplicar archivos y autoactualización desde GitHub Releases",
-      "url": "https://github.com/EnderFairXD/galeria-personal",
-      "web": null,
-      "lenguaje": "TypeScript",
-      "lenguajes": [
-        "JavaScript",
-        "TypeScript"
-      ],
-      "topics": [
-        "react-native",
-        "expo",
-        "typescript",
-        "android"
-      ],
-      "creado": "2026-09-27",
-      "actualizado": "2026-10-21"
     },
     {
       "nombre": "GEOgis-SimpleWeb",

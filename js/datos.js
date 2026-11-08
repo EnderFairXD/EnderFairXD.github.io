@@ -4,10 +4,10 @@ window.DATOS = {
   persona: {
     nombre: 'Javier Cortés Vidal',
     iniciales: 'JCV',
-    rol: { es: 'Técnico de sistemas y desarrollador', en: 'Systems technician & developer' },
+    rol: { es: 'Técnico de sistemas y seguridad · Especialización en Ciberseguridad', en: 'Systems & Security Technician · Cybersecurity Specialization' },
     presentacion: {
-      es: 'Soy Javier Cortés Vidal, técnico de sistemas y desarrollador junior en Sevilla.',
-      en: 'I am Javier Cortés Vidal, a junior systems technician and developer in Seville.',
+      es: 'Soy Javier Cortés Vidal, técnico de sistemas y seguridad junior en Sevilla, cursando la especialización en Ciberseguridad.',
+      en: 'I am Javier Cortés Vidal, a junior systems & security technician in Seville, currently on a Cybersecurity specialization.',
     },
     titular: [
       { es: 'Del cable', en: 'From wire' },
@@ -104,7 +104,7 @@ window.DATOS = {
     hola: { es: 'Hola', en: 'Hello' },
     escribeme: { es: 'Escríbeme un correo', en: 'Send me an email' },
     asuntoCorreo: { es: 'Contacto desde tu web', en: 'Contact from your website' },
-    notaPie: { es: 'Técnico de sistemas y desarrollador junior. Busco mi primera oportunidad.', en: 'Junior systems technician and developer. Open to my first role.' },
+    notaPie: { es: 'Técnico de sistemas y seguridad junior. Busco mi primera oportunidad.', en: 'Junior systems & security technician. Open to my first role.' },
     volverArriba: { es: 'Volver arriba', en: 'Back to top' },
     hechoAMano: { es: 'Hecho a mano con HTML, CSS y JavaScript, sin frameworks. Mapas de las capturas: © colaboradores de OpenStreetMap.', en: 'Hand-made with HTML, CSS and JavaScript, no frameworks. Screenshot maps: © OpenStreetMap contributors.' },
     datosGithub: { es: 'Datos de GitHub del {fecha}', en: 'GitHub data from {fecha}' },
@@ -226,7 +226,7 @@ window.DATOS = {
         en: 'Tools built on language models that run on your own machine (Llama 3.1 via Ollama), with no data sent to the cloud: transcription with faster-whisper, PDF analysis, IMAP email triage and documentation generated from the code’s abstract syntax tree (AST).',
       },
       tecnologias: ['Ollama', 'Llama 3.1', 'LangChain', 'faster-whisper', 'pdfplumber', 'AST', 'Streamlit'],
-      repos: ['STUDYBRAIN-AI', 'AI-CONTRACT-ANALYZER', 'AI-MEETING-ASSISTANT', 'AI-EMAIL-ORGANIZER', 'AI-DOC-GENERATOR'],
+      repos: ['STUDYBRAIN-AI', 'llm-agent-prompt-injection-lab', 'AI-CONTRACT-ANALYZER', 'AI-MEETING-ASSISTANT', 'AI-EMAIL-ORGANIZER', 'AI-DOC-GENERATOR'],
     },
     {
       id: 'datos-gis',
@@ -255,15 +255,51 @@ window.DATOS = {
       frase: { es: 'Datos cifrados donde se crean.', en: 'Data encrypted where it is created.' },
       titulo: { es: 'Ciberseguridad', en: 'Cybersecurity' },
       resumen: {
-        es: 'En formación con la especialización de CESUR, pero ya aplicada en lo que construyo: canales cifrados con Noise IK y emparejamiento por QR entre dispositivos, cifrado AES-256-GCM con la clave en el Keystore de Android, bloqueo biométrico, secretos fuera del repositorio (GitHub Secrets), permisos comprobados en el servidor y procesamiento local para que los datos personales no salgan del equipo.',
-        en: 'In training through the CESUR specialization, but already applied in what I build: Noise IK encrypted channels and QR pairing between devices, AES-256-GCM encryption with the key in the Android Keystore, biometric lock, secrets kept out of the repo (GitHub Secrets), permissions enforced server-side and local processing so personal data never leaves the device.',
+        es: 'En formación con la especialización de CESUR, pero ya aplicada en lo que construyo: canales cifrados con Noise IK y emparejamiento por QR entre dispositivos, cifrado AES-256-GCM con la clave en el Keystore de Android, bloqueo biométrico, secretos fuera del repositorio (GitHub Secrets), permisos comprobados en el servidor y procesamiento local para que los datos personales no salgan del equipo. También pongo a prueba agentes de IA: prompt injection indirecta, medida con varias defensas.',
+        en: 'In training through the CESUR specialization, but already applied in what I build: Noise IK encrypted channels and QR pairing between devices, AES-256-GCM encryption with the key in the Android Keystore, biometric lock, secrets kept out of the repo (GitHub Secrets), permissions enforced server-side and local processing so personal data never leaves the device. I also put AI agents to the test: indirect prompt injection, measured against several defenses.',
       },
-      tecnologias: ['Noise IK', 'ChaCha20-Poly1305', 'AES-256-GCM', 'Android Keystore', 'Biometría', 'GitHub Secrets'],
-      repos: ['portapapeles-universal-p2p', 'boveda-garantias', 'boveda-burocratica', 'AI-CONTRACT-ANALYZER', 'GEOgis-SimpleWeb'],
+      tecnologias: ['Noise IK', 'ChaCha20-Poly1305', 'AES-256-GCM', 'Android Keystore', 'Biometría', 'GitHub Secrets', 'LLM / AI agent security', 'Prompt injection testing'],
+      repos: ['llm-agent-prompt-injection-lab', 'portapapeles-universal-p2p', 'boveda-garantias', 'boveda-burocratica', 'AI-CONTRACT-ANALYZER', 'GEOgis-SimpleWeb'],
     },
   ],
 
   destacados: [
+    {
+      repo: 'llm-agent-prompt-injection-lab',
+      nombre: 'Prompt Injection Lab',
+      titulo: { es: 'LLM Agent Prompt Injection Lab', en: 'LLM Agent Prompt Injection Lab' },
+      problema: {
+        es: 'Un agente de IA que lee tu correo y puede enviar mensajes procesa texto de cualquiera que te escriba. ¿Basta un correo malicioso para que filtre datos sin que nadie se lo pida? ¿Y qué defensas lo paran de verdad?',
+        en: 'An AI agent that reads your email and can send messages processes text from anyone who writes to you. Is one malicious email enough to make it leak data nobody asked it to send? And which defenses actually stop it?',
+      },
+      solucion: {
+        es: 'Monté un agente de correo con IA en mi servidor casero y lo ataqué con prompt injection indirecta. Sin defensas filtró unas credenciales en el 53 % de las ejecuciones; las defensas basadas en el prompt cayeron ante un ataque adaptado; el mínimo privilegio y la confirmación humana pararon todas las filtraciones.',
+        en: 'Built an AI email agent on my home server and attacked it with indirect prompt injection. Credentials leaked in 53 % of runs with no defenses; prompt-based defenses were bypassed by an adapted attack; least privilege and human confirmation stopped every leak.',
+      },
+      decisiones: [
+        { es: 'Agente en Python solo con la biblioteca estándar, contra la API de Ollama (qwen2.5:3b en Docker, en CPU). send_email escribe en un log: ninguna filtración sale del laboratorio.', en: 'Python agent using only the standard library, talking to the Ollama API (qwen2.5:3b in Docker, on CPU). send_email writes to a log, so no leak ever leaves the lab.' },
+        { es: 'Contraseña canario para medir la fuga sin ambigüedad y 15 ejecuciones por configuración: con un modelo no determinista, una sola ejecución no demuestra nada.', en: 'A canary password to detect leaks unambiguously, and 15 runs per configuration: with a non-deterministic model, a single run proves nothing.' },
+        { es: 'Ataque adaptativo contra el prompt endurecido: un correo que cierra la etiqueta <correo_no_confiable> y suplanta al usuario. De 0/15 pasó a 1/15.', en: 'An adaptive attack against the hardened prompt: an email that closes the <correo_no_confiable> tag and impersonates the user. It went from 0/15 to 1/15.' },
+        { es: 'Revisé cada ejecución, no solo el recuento: con el prompt endurecido el agente apenas abría el correo malicioso, así que parte de su 0/15 era no hacer la tarea; y las 5 veces que sí lo abrió, el resumen afirmaba haber enviado las credenciales.', en: 'I checked every run, not just the totals: with the hardened prompt the agent barely opened the malicious email, so part of its 0/15 came from not doing the task; and all 5 times it did open it, the summary claimed it had sent the credentials.' },
+        { es: 'Defensas en código medidas por separado: con confirmación humana el modelo intentó enviar las credenciales 5 veces y el código lo bloqueó; sin herramienta de envío no filtró nada, pero en las 10 ejecuciones en que leyó el correo malicioso le dijo al usuario que había enviado las credenciales.', en: 'Code-level defenses measured separately: with human confirmation the model tried to send the credentials 5 times and the code blocked it; without a send tool nothing leaked, but in all 10 runs where it read the malicious email it told the user it had sent the credentials.' },
+      ],
+      cifras: [
+        { valor: '53 %', etiqueta: { es: 'filtraciones sin defensas', en: 'leaks with no defenses' } },
+        { valor: '1/15', etiqueta: { es: 'prompt endurecido vs. ataque adaptado', en: 'hardened prompt vs. adapted attack' } },
+        { valor: '0/15', etiqueta: { es: 'con mínimo privilegio o confirmación', en: 'with least privilege or confirmation' } },
+      ],
+      stack: ['Python', 'Ollama', 'LLM security', 'Prompt injection', 'Docker'],
+      fragmento: {
+        tipo: 'flujo',
+        pasos: [
+          { es: 'Correo malicioso en la bandeja de entrada', en: 'Malicious email in the inbox' },
+          { es: 'read_email: el texto del atacante entra en el contexto', en: 'read_email: the attacker’s text enters the context' },
+          { es: 'send_email con las credenciales a un tercero', en: 'send_email with the credentials to a third party' },
+          { es: 'Mínimo privilegio o confirmación humana lo cortan', en: 'Least privilege or human confirmation cut it off' },
+        ],
+      },
+      areas: ['ciber', 'ia'],
+    },
     {
       repo: 'GEOgis-SimpleWeb',
       nombre: 'GEOgis',
