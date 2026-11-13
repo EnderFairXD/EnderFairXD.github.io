@@ -204,7 +204,7 @@ window.DATOS = {
         en: 'Django and GeoDjango for database-backed apps with JSON APIs, admin panels and permissions; Streamlit for quick dashboards. I write tests that run in CI and ship a ready-to-run Docker Compose setup. I have also built real-time servers with Node.js and WebSockets.',
       },
       tecnologias: ['Python', 'Django', 'GeoDjango', 'Streamlit', 'Node.js', 'WebSockets', 'REST / JSON', 'Java', 'PHP'],
-      repos: ['GEOgis-SimpleWeb', 'rastreador-de-precios', 'BasicWebsocketsWeb', 'AI-DOC-GENERATOR'],
+      repos: ['GEOgis-SimpleWeb', 'suite-ia-local', 'rastreador-de-precios', 'BasicWebsocketsWeb'],
     },
     {
       id: 'movil',
@@ -222,11 +222,11 @@ window.DATOS = {
       frase: { es: 'IA que no sale de tu equipo.', en: 'AI that never leaves your machine.' },
       titulo: { es: 'IA local', en: 'Local AI' },
       resumen: {
-        es: 'Herramientas con modelos de lenguaje que se ejecutan en el propio equipo (Llama 3.1 con Ollama), sin enviar datos a la nube: transcripción con faster-whisper, análisis de PDFs, clasificación de correo por IMAP y generación de documentación a partir del árbol sintáctico (AST) del código.',
-        en: 'Tools built on language models that run on your own machine (Llama 3.1 via Ollama), with no data sent to the cloud: transcription with faster-whisper, PDF analysis, IMAP email triage and documentation generated from the code’s abstract syntax tree (AST).',
+        es: 'Herramientas con modelos de lenguaje que se ejecutan en el propio equipo (Llama 3.1 con Ollama), sin enviar datos a la nube: transcripción con faster-whisper, análisis de PDFs, clasificación de correo por IMAP con defensas contra prompt injection y documentación a partir del árbol sintáctico (AST) del código. Los textos que no caben en el contexto del modelo se dividen y se combinan, en vez de recortarse sin avisar.',
+        en: 'Tools built on language models that run on your own machine (Llama 3.1 via Ollama), with no data sent to the cloud: transcription with faster-whisper, PDF analysis, IMAP email triage with prompt injection defenses and documentation generated from the code’s abstract syntax tree (AST). Texts that don’t fit the model’s context are split and recombined instead of being silently truncated.',
       },
-      tecnologias: ['Ollama', 'Llama 3.1', 'LangChain', 'faster-whisper', 'pdfplumber', 'AST', 'Streamlit'],
-      repos: ['STUDYBRAIN-AI', 'llm-agent-prompt-injection-lab', 'AI-CONTRACT-ANALYZER', 'AI-MEETING-ASSISTANT', 'AI-EMAIL-ORGANIZER', 'AI-DOC-GENERATOR'],
+      tecnologias: ['Ollama', 'Llama 3.1', 'faster-whisper', 'pdfplumber', 'AST', 'Streamlit', 'pytest'],
+      repos: ['suite-ia-local', 'llm-agent-prompt-injection-lab'],
     },
     {
       id: 'datos-gis',
@@ -259,7 +259,7 @@ window.DATOS = {
         en: 'In training through the CESUR specialization, but already applied in what I build: Noise IK encrypted channels and QR pairing between devices, AES-256-GCM encryption with the key in the Android Keystore, biometric lock, secrets kept out of the repo (GitHub Secrets), permissions enforced server-side and local processing so personal data never leaves the device. I also put AI agents to the test: indirect prompt injection, measured against several defenses.',
       },
       tecnologias: ['Noise IK', 'ChaCha20-Poly1305', 'AES-256-GCM', 'Android Keystore', 'Biometría', 'GitHub Secrets', 'LLM / AI agent security', 'Prompt injection testing'],
-      repos: ['llm-agent-prompt-injection-lab', 'portapapeles-universal-p2p', 'boveda-garantias', 'boveda-burocratica', 'AI-CONTRACT-ANALYZER', 'GEOgis-SimpleWeb'],
+      repos: ['llm-agent-prompt-injection-lab', 'portapapeles-universal-p2p', 'boveda-garantias', 'boveda-burocratica', 'suite-ia-local', 'GEOgis-SimpleWeb'],
     },
   ],
 
@@ -363,37 +363,38 @@ window.DATOS = {
       areas: ['movil', 'sistemas', 'ciber'],
     },
     {
-      repo: 'STUDYBRAIN-AI',
-      nombre: 'StudyBrain AI',
-      titulo: { es: 'StudyBrain AI · Tutor local', en: 'StudyBrain AI · Local tutor' },
+      repo: 'suite-ia-local',
+      nombre: 'Suite de IA local',
+      titulo: { es: 'Suite de IA local · Cinco herramientas, cero nube', en: 'Local AI suite · Five tools, zero cloud' },
       problema: {
-        es: 'Convertir horas de clase grabada y temarios en PDF en material de estudio lleva mucho tiempo, y subir esos apuntes a servicios externos no siempre es aceptable.',
-        en: 'Turning hours of recorded lectures and PDF syllabi into study material takes ages, and uploading them to external services is not always acceptable.',
+        es: 'Contratos, reuniones, clases, correo y código: documentos que no quieres subir a un servicio externo. Y un fallo silencioso de los modelos locales: si el texto no cabe en su contexto, lo recortan sin avisar y la respuesta parece completa.',
+        en: 'Contracts, meetings, lectures, email and code: documents you would rather not upload to an external service. Plus a silent failure of local models: when a text does not fit their context they truncate it without warning, and the answer still looks complete.',
       },
       solucion: {
-        es: 'Una app Streamlit 100 % local: transcribe audio de clases y lo convierte en apuntes en Markdown, y a partir de PDFs genera flashcards y tests de opción múltiple con su corrección.',
-        en: 'A fully local Streamlit app: it transcribes lecture audio into structured Markdown notes, and turns PDFs into flashcards and multiple-choice tests with answer keys.',
+        es: 'Una app Streamlit con cinco herramientas sobre un núcleo común: informe de riesgos de un contrato, README de un archivo Python, triaje de correo, minuta de una reunión y apuntes, flashcards o examen de una clase o un temario. Todo con Ollama y Whisper en tu equipo.',
+        en: 'A Streamlit app with five tools on a shared core: a risk report for a contract, a README for a Python file, email triage, meeting minutes, and notes, flashcards or a quiz from a lecture or syllabus. All with Ollama and Whisper on your own machine.',
       },
       decisiones: [
-        { es: 'faster-whisper para transcribir en CPU con poca memoria.', en: 'faster-whisper for transcription on CPU with low memory use.' },
-        { es: 'Llama 3.1 vía Ollama: el modelo corre en el propio equipo, sin claves de API ni datos fuera.', en: 'Llama 3.1 via Ollama: the model runs on your machine, no API keys and no data leaving it.' },
-        { es: 'pdfplumber para extraer el texto de los temarios antes de pasarlo al modelo.', en: 'pdfplumber to extract syllabus text before it reaches the model.' },
+        { es: 'Los textos largos se dividen por párrafos y se combinan por tandas; la app dice en cuántas partes lo ha hecho y avisa si el modelo pudo recortar.', en: 'Long texts are split by paragraph and recombined in batches; the app says how many parts it used and warns when the model may have truncated.' },
+        { es: 'El correo es contenido de terceros: va como dato, entre delimitadores aleatorios, con las defensas medidas en mi laboratorio de prompt injection.', en: 'Email is third-party content: it goes in as data, between random delimiters, with the defenses measured in my prompt injection lab.' },
+        { es: 'La lógica no depende de Streamlit y se prueba sin modelo: cliente falso, un servidor HTTP que imita Ollama y PDFs generados en el test.', en: 'The logic does not depend on Streamlit and is tested without a model: a fake client, an HTTP server that mimics Ollama and PDFs generated in the test.' },
       ],
       cifras: [
-        { valor: '3', etiqueta: { es: 'modos de estudio', en: 'study modes' } },
+        { valor: '5', etiqueta: { es: 'herramientas', en: 'tools' } },
+        { valor: '86', etiqueta: { es: 'tests en CI', en: 'tests in CI' } },
         { valor: '100 %', etiqueta: { es: 'local', en: 'local' } },
       ],
-      stack: ['Python', 'Streamlit', 'Ollama', 'Llama 3.1', 'faster-whisper'],
+      stack: ['Python', 'Streamlit', 'Ollama', 'faster-whisper', 'pdfplumber', 'pytest'],
       fragmento: {
         tipo: 'flujo',
         pasos: [
-          { es: 'clase.mp3 o temario.pdf', en: 'lecture.mp3 or syllabus.pdf' },
-          { es: 'faster-whisper / pdfplumber → texto', en: 'faster-whisper / pdfplumber → text' },
+          { es: 'PDF, audio, código o correo', en: 'PDF, audio, code or email' },
+          { es: 'Texto (pdfplumber, faster-whisper, AST, IMAP)', en: 'Text (pdfplumber, faster-whisper, AST, IMAP)' },
+          { es: '¿No cabe? Partes y combinación por tandas', en: 'Too long? Parts, then batched recombination' },
           { es: 'Llama 3.1 en Ollama, en tu equipo', en: 'Llama 3.1 on Ollama, on your machine' },
-          { es: 'Apuntes, flashcards o test', en: 'Notes, flashcards or a test' },
         ],
       },
-      areas: ['ia'],
+      areas: ['ia', 'ciber', 'backend'],
     },
     {
       repo: 'rastreador-de-precios',
@@ -459,30 +460,6 @@ window.DATOS = {
 
   // Repos públicos no destacados, en el orden en que se muestran.
   otros: [
-    {
-      repo: 'AI-CONTRACT-ANALYZER',
-      nombre: { es: 'Analizador de contratos', en: 'Contract analyzer' },
-      descripcion: { es: 'Analiza contratos en PDF con Llama 3.1 en local, sin enviar el documento a ningún servidor.', en: 'Analyses PDF contracts with Llama 3.1 locally, without sending the document to any server.' },
-      areas: ['ia', 'ciber'],
-    },
-    {
-      repo: 'AI-MEETING-ASSISTANT',
-      nombre: { es: 'Asistente de reuniones', en: 'Meeting assistant' },
-      descripcion: { es: 'Transcribe reuniones con faster-whisper y redacta la minuta con resumen y tareas.', en: 'Transcribes meetings with faster-whisper and writes minutes with a summary and action items.' },
-      areas: ['ia'],
-    },
-    {
-      repo: 'AI-EMAIL-ORGANIZER',
-      nombre: { es: 'Organizador de correo', en: 'Email organizer' },
-      descripcion: { es: 'Descarga el correo por IMAP y lo clasifica, resume y responde con IA local.', en: 'Fetches mail over IMAP and sorts, summarises and drafts replies with local AI.' },
-      areas: ['ia'],
-    },
-    {
-      repo: 'AI-DOC-GENERATOR',
-      nombre: { es: 'Generador de documentación', en: 'Docs generator' },
-      descripcion: { es: 'Lee código Python con el módulo ast y genera un README técnico con diagramas Mermaid.', en: 'Reads Python code with the ast module and writes a technical README with Mermaid diagrams.' },
-      areas: ['ia', 'backend'],
-    },
     {
       repo: 'galeria-personal',
       nombre: { es: 'Galería', en: 'Gallery' },

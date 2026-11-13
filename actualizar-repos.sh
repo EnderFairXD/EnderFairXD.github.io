@@ -26,7 +26,7 @@ escribir() {
 }
 
 if [[ "$SOLO" != "precios" ]]; then
-  lista=$(gh repo list "$USUARIO" --visibility public --source --limit 100 \
+  lista=$(gh repo list "$USUARIO" --visibility public --source --no-archived --limit 100 \
     --json name,description,url,homepageUrl,primaryLanguage,languages,repositoryTopics,createdAt,updatedAt)
   repos=$(jq --arg usuario "$USUARIO" --arg hoy "$HOY" '{
       generado: $hoy,

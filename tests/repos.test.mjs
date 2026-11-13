@@ -6,7 +6,8 @@ const { REPOS } = cargar(['js/repos.js']);
 
 test('repos.js incluye los repos públicos', () => {
   assert.equal(REPOS.usuario, 'EnderFairXD');
-  assert.ok(REPOS.repos.length >= 10, `solo hay ${REPOS.repos.length}`);
+  // Protege de una generación rota o vacía; los archivados no cuentan (--no-archived).
+  assert.ok(REPOS.repos.length >= 5, `solo hay ${REPOS.repos.length}`);
   assert.match(REPOS.generado, /^\d{4}-\d{2}-\d{2}$/);
 });
 

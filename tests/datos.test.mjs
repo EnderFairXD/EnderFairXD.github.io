@@ -6,7 +6,7 @@ import { cargar, raiz } from './cargar.mjs';
 const { DATOS, REPOS } = cargar(['js/repos.js', 'js/datos.js']);
 const nombresRepos = new Set(REPOS.repos.map((r) => r.nombre));
 const AREAS = ['backend', 'movil', 'ia', 'datos-gis', 'sistemas', 'ciber'];
-const DESTACADOS = ['llm-agent-prompt-injection-lab', 'GEOgis-SimpleWeb', 'portapapeles-universal-p2p', 'STUDYBRAIN-AI', 'rastreador-de-precios', 'boveda-garantias'];
+const DESTACADOS = ['llm-agent-prompt-injection-lab', 'GEOgis-SimpleWeb', 'portapapeles-universal-p2p', 'suite-ia-local', 'rastreador-de-precios', 'boveda-garantias'];
 
 function recorrer(valor, ruta, visitar) {
   if (valor && typeof valor === 'object') {
