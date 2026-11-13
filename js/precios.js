@@ -1,6 +1,6 @@
 // Generado por actualizar-repos.sh — no editar a mano.
 window.PRECIOS = {
-  "generado": "2026-10-27",
+  "generado": "2026-11-13",
   "fuente": "https://enderfairxd.github.io/rastreador-de-precios/historico.json",
   "historico": {
     "gesture": [
@@ -133,6 +133,91 @@ window.PRECIOS = {
         "fecha": "2026-10-27",
         "mejor": 1069.52,
         "tienda": "Office Logix Shop (reacond. EE. UU.)"
+      },
+      {
+        "fecha": "2026-10-28",
+        "mejor": 1071.94,
+        "tienda": "Office Logix Shop (reacond. EE. UU.)"
+      },
+      {
+        "fecha": "2026-10-29",
+        "mejor": 1069.52,
+        "tienda": "Office Logix Shop (reacond. EE. UU.)"
+      },
+      {
+        "fecha": "2026-10-30",
+        "mejor": 1064.68,
+        "tienda": "Office Logix Shop (reacond. EE. UU.)"
+      },
+      {
+        "fecha": "2026-10-31",
+        "mejor": 1068.31,
+        "tienda": "Office Logix Shop (reacond. EE. UU.)"
+      },
+      {
+        "fecha": "2026-11-01",
+        "mejor": 1068.31,
+        "tienda": "Office Logix Shop (reacond. EE. UU.)"
+      },
+      {
+        "fecha": "2026-11-02",
+        "mejor": 1063.47,
+        "tienda": "Office Logix Shop (reacond. EE. UU.)"
+      },
+      {
+        "fecha": "2026-11-03",
+        "mejor": 1065.89,
+        "tienda": "Office Logix Shop (reacond. EE. UU.)"
+      },
+      {
+        "fecha": "2026-11-04",
+        "mejor": 1058.63,
+        "tienda": "Office Logix Shop (reacond. EE. UU.)"
+      },
+      {
+        "fecha": "2026-11-05",
+        "mejor": 1062.26,
+        "tienda": "Office Logix Shop (reacond. EE. UU.)"
+      },
+      {
+        "fecha": "2026-11-06",
+        "mejor": 1062.26,
+        "tienda": "Office Logix Shop (reacond. EE. UU.)"
+      },
+      {
+        "fecha": "2026-11-07",
+        "mejor": 1069.52,
+        "tienda": "Office Logix Shop (reacond. EE. UU.)"
+      },
+      {
+        "fecha": "2026-11-08",
+        "mejor": 1069.52,
+        "tienda": "Office Logix Shop (reacond. EE. UU.)"
+      },
+      {
+        "fecha": "2026-11-09",
+        "mejor": 1064.68,
+        "tienda": "Office Logix Shop (reacond. EE. UU.)"
+      },
+      {
+        "fecha": "2026-11-10",
+        "mejor": 1062.26,
+        "tienda": "Office Logix Shop (reacond. EE. UU.)"
+      },
+      {
+        "fecha": "2026-11-11",
+        "mejor": 1068.31,
+        "tienda": "Office Logix Shop (reacond. EE. UU.)"
+      },
+      {
+        "fecha": "2026-11-12",
+        "mejor": 1075.57,
+        "tienda": "Office Logix Shop (reacond. EE. UU.)"
+      },
+      {
+        "fecha": "2026-11-13",
+        "mejor": 1079.2,
+        "tienda": "Office Logix Shop (reacond. EE. UU.)"
       }
     ],
     "tygr": [
@@ -253,6 +338,91 @@ window.PRECIOS = {
       },
       {
         "fecha": "2026-10-27",
+        "mejor": 158.0,
+        "tienda": "Thomann (DE)"
+      },
+      {
+        "fecha": "2026-10-28",
+        "mejor": 158.0,
+        "tienda": "Thomann (DE)"
+      },
+      {
+        "fecha": "2026-10-29",
+        "mejor": 158.0,
+        "tienda": "Thomann (DE)"
+      },
+      {
+        "fecha": "2026-10-30",
+        "mejor": 158.0,
+        "tienda": "Thomann (DE)"
+      },
+      {
+        "fecha": "2026-10-31",
+        "mejor": 158.0,
+        "tienda": "Thomann (DE)"
+      },
+      {
+        "fecha": "2026-11-01",
+        "mejor": 158.0,
+        "tienda": "Thomann (DE)"
+      },
+      {
+        "fecha": "2026-11-02",
+        "mejor": 158.0,
+        "tienda": "Thomann (DE)"
+      },
+      {
+        "fecha": "2026-11-03",
+        "mejor": 158.0,
+        "tienda": "Thomann (DE)"
+      },
+      {
+        "fecha": "2026-11-04",
+        "mejor": 158.0,
+        "tienda": "Thomann (DE)"
+      },
+      {
+        "fecha": "2026-11-05",
+        "mejor": 158.0,
+        "tienda": "Thomann (DE)"
+      },
+      {
+        "fecha": "2026-11-06",
+        "mejor": 158.0,
+        "tienda": "Thomann (DE)"
+      },
+      {
+        "fecha": "2026-11-07",
+        "mejor": 158.0,
+        "tienda": "Thomann (DE)"
+      },
+      {
+        "fecha": "2026-11-08",
+        "mejor": 158.0,
+        "tienda": "Thomann (DE)"
+      },
+      {
+        "fecha": "2026-11-09",
+        "mejor": 158.0,
+        "tienda": "Thomann (DE)"
+      },
+      {
+        "fecha": "2026-11-10",
+        "mejor": 158.0,
+        "tienda": "Thomann (DE)"
+      },
+      {
+        "fecha": "2026-11-11",
+        "mejor": 158.0,
+        "tienda": "Thomann (DE)"
+      },
+      {
+        "fecha": "2026-11-12",
+        "mejor": 158.0,
+        "tienda": "Thomann (DE)"
+      },
+      {
+        "fecha": "2026-11-13",
         "mejor": 158.0,
         "tienda": "Thomann (DE)"
       }

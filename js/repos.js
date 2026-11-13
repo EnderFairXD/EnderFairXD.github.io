@@ -1,8 +1,30 @@
 // Generado por actualizar-repos.sh — no editar a mano.
 window.REPOS = {
-  "generado": "2026-11-08",
+  "generado": "2026-11-13",
   "usuario": "EnderFairXD",
   "repos": [
+    {
+      "nombre": "suite-ia-local",
+      "descripcion": "Suite de IA 100 % local: contratos, documentación de código, correo, reuniones y estudio con Ollama y Whisper",
+      "url": "https://github.com/EnderFairXD/suite-ia-local",
+      "web": null,
+      "lenguaje": "Python",
+      "lenguajes": [
+        "Python"
+      ],
+      "topics": [
+        "llm",
+        "local-ai",
+        "ollama",
+        "privacy",
+        "prompt-injection",
+        "python",
+        "streamlit",
+        "whisper"
+      ],
+      "creado": "2026-11-13",
+      "actualizado": "2026-11-13"
+    },
     {
       "nombre": "rastreador-de-precios",
       "descripcion": "Rastreador diario de precios (silla Steelcase Gesture y auriculares Beyerdynamic TYGR 300 R) en varias tiendas: GitHub Actions, PWA y avisos por Telegram.",
@@ -21,7 +43,7 @@ window.REPOS = {
         "price-tracker"
       ],
       "creado": "2026-09-21",
-      "actualizado": "2026-11-08"
+      "actualizado": "2026-11-12"
     },
     {
       "nombre": "llm-agent-prompt-injection-lab",
@@ -151,97 +173,6 @@ window.REPOS = {
         "mobile"
       ],
       "creado": "2026-09-23",
-      "actualizado": "2026-10-14"
-    },
-    {
-      "nombre": "STUDYBRAIN-AI",
-      "descripcion": "Tutor universitario 100% local: transcribe clases y genera apuntes, flashcards y tests con faster-whisper y Llama 3.1 (Ollama). Streamlit.",
-      "url": "https://github.com/EnderFairXD/STUDYBRAIN-AI",
-      "web": null,
-      "lenguaje": "Python",
-      "lenguajes": [
-        "Python"
-      ],
-      "topics": [
-        "python",
-        "streamlit",
-        "ollama",
-        "llama",
-        "whisper"
-      ],
-      "creado": "2026-09-20",
-      "actualizado": "2026-10-14"
-    },
-    {
-      "nombre": "AI-MEETING-ASSISTANT",
-      "descripcion": "Asistente local para reuniones: transcripción con faster-whisper y análisis con Llama 3.1 (Ollama). Streamlit.",
-      "url": "https://github.com/EnderFairXD/AI-MEETING-ASSISTANT",
-      "web": null,
-      "lenguaje": "Python",
-      "lenguajes": [
-        "Python"
-      ],
-      "topics": [
-        "python",
-        "streamlit",
-        "ollama",
-        "whisper"
-      ],
-      "creado": "2026-09-20",
-      "actualizado": "2026-10-14"
-    },
-    {
-      "nombre": "AI-EMAIL-ORGANIZER",
-      "descripcion": "Organizador de correo con IA local: descarga mensajes por IMAP y los clasifica con Llama 3.1 (Ollama). Streamlit y LangChain.",
-      "url": "https://github.com/EnderFairXD/AI-EMAIL-ORGANIZER",
-      "web": null,
-      "lenguaje": "Python",
-      "lenguajes": [
-        "Python"
-      ],
-      "topics": [
-        "python",
-        "streamlit",
-        "langchain",
-        "ollama"
-      ],
-      "creado": "2026-09-20",
-      "actualizado": "2026-10-14"
-    },
-    {
-      "nombre": "AI-DOC-GENERATOR",
-      "descripcion": "Genera README técnicos a partir de código Python mediante análisis AST y un LLM local (Ollama). Streamlit.",
-      "url": "https://github.com/EnderFairXD/AI-DOC-GENERATOR",
-      "web": null,
-      "lenguaje": "Python",
-      "lenguajes": [
-        "Python"
-      ],
-      "topics": [
-        "python",
-        "streamlit",
-        "ollama",
-        "ast"
-      ],
-      "creado": "2026-09-20",
-      "actualizado": "2026-10-14"
-    },
-    {
-      "nombre": "AI-CONTRACT-ANALYZER",
-      "descripcion": "Analizador de contratos PDF 100% local con Streamlit, LangChain y Ollama (Llama 3.1), sin enviar datos a la nube.",
-      "url": "https://github.com/EnderFairXD/AI-CONTRACT-ANALYZER",
-      "web": null,
-      "lenguaje": "Python",
-      "lenguajes": [
-        "Python"
-      ],
-      "topics": [
-        "python",
-        "streamlit",
-        "langchain",
-        "ollama"
-      ],
-      "creado": "2026-09-20",
       "actualizado": "2026-10-14"
     },
     {
