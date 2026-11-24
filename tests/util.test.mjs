@@ -115,3 +115,8 @@ test('resaltado marca solo cuando coincide una parte de los proyectos', () => {
   assert.equal(ninguno.parcial, false);
   assert.equal(ninguno.repos.size, 0);
 });
+
+test('areasIniciales: en móvil empiezan todas cerradas; en ordenador, backend y sistemas abiertas', () => {
+  assert.deepEqual([...UTIL.areasIniciales(true)], []);
+  assert.deepEqual([...UTIL.areasIniciales(false)].sort(), ['backend', 'sistemas']);
+});

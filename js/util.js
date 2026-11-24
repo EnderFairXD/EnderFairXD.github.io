@@ -80,8 +80,13 @@
     return { repos, parcial: repos.size > 0 && repos.size < proyectos.length };
   }
 
+  // En móvil todas las áreas empiezan cerradas para no alargar la página; en ordenador, dos abiertas.
+  function areasIniciales(esMovil) {
+    return new Set(esMovil ? [] : ['backend', 'sistemas']);
+  }
+
   window.UTIL = {
     t, idiomaInicial, leerPreferencia, guardarPreferencia, unirProyectos,
-    resumenLenguajes, resumenTopics, seriePrecios, formatearPrecio, historicoValido, resaltado,
+    resumenLenguajes, resumenTopics, seriePrecios, formatearPrecio, historicoValido, resaltado, areasIniciales,
   };
 })();

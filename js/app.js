@@ -10,7 +10,7 @@
 
   const estado = {
     idioma: UTIL.idiomaInicial(UTIL.leerPreferencia(almacen, 'idioma'), navigator.language),
-    encendidas: new Set(['backend', 'sistemas']),
+    encendidas: UTIL.areasIniciales(window.matchMedia ? matchMedia('(max-width: 700px)').matches : false),
     producto: 'gesture',
     historico: PRECIOS.historico,
     preciosEnDirecto: false,
@@ -50,6 +50,18 @@
   const revelar = (i) => `data-revelar style="--r:${i}"`;
 
   // ---------------------------------------------------------------- secciones
+  // Bloque que en móvil se pliega tras un botón y en ordenador se ve siempre (ver .plegable en CSS).
+  let plegables = 0;
+  function plegable(contenido, claveAbrir, claveCerrar, clase = '') {
+    const id = `plegable-${++plegables}`;
+    return `
+      <div class="plegable ${clase}" data-abierto="false">
+        <button type="button" class="plegable__boton" data-plegable aria-expanded="false" aria-controls="${id}"
+          data-abrir="${ui(claveAbrir)}" data-cerrar="${ui(claveCerrar)}">${ui(claveAbrir)}</button>
+        <div class="plegable__contenido" id="${id}">${contenido}</div>
+      </div>`;
+  }
+
   function portada() {
     const p = DATOS.persona;
     const lineas = p.titular
@@ -68,7 +80,11 @@
     const datos = DATOS.datosRapidos
       .map((d) => `<div><dt>${tr(d.etiqueta)}</dt><dd>${tr(d.valor)}</dd></div>`)
       .join('');
-    const parrafos = DATOS.sobreMi.map((t, i) => `<p ${revelar(i + 1)}>${tr(t)}</p>`).join('');
+    const parrafo = (t, i) => `<p ${revelar(i + 1)}>${tr(t)}</p>`;
+    const parrafos = DATOS.sobreMi.slice(0, 2).map(parrafo).join('')
+      + (DATOS.sobreMi.length > 2
+        ? plegable(DATOS.sobreMi.slice(2).map((t, i) => parrafo(t, i + 2)).join(''), 'seguirLeyendo', 'leerMenos', 'plegable--texto')
+        : '');
     return `
       <div class="sobre-mi__lado" ${revelar(0)}>
         <img class="retrato" src="${p.foto}" alt="${ui('fotoAlt')}" width="720" height="960" loading="lazy">
@@ -184,12 +200,13 @@
   function relato(d) {
     return `
       <div class="relato">
-        <div ${revelar(1)}><h4>${ui('problema')}</h4><p>${tr(d.problema)}</p></div>
-        <div ${revelar(2)}><h4>${ui('solucion')}</h4><p>${tr(d.solucion)}</p></div>
-        <div ${revelar(3)}>
-          <h4>${ui('decisiones')}</h4>
-          <ul class="decisiones">${d.decisiones.map((x) => `<li>${tr(x)}</li>`).join('')}</ul>
-        </div>
+        <div class="relato__solucion" ${revelar(2)}><h4>${ui('solucion')}</h4><p>${tr(d.solucion)}</p></div>
+        ${plegable(`
+          <div class="relato__problema" ${revelar(1)}><h4>${ui('problema')}</h4><p>${tr(d.problema)}</p></div>
+          <div class="relato__decisiones" ${revelar(3)}>
+            <h4>${ui('decisiones')}</h4>
+            <ul class="decisiones">${d.decisiones.map((x) => `<li>${tr(x)}</li>`).join('')}</ul>
+          </div>`, 'verDetalles', 'ocultarDetalles', 'plegable--relato')}
       </div>`;
   }
 
@@ -583,6 +600,7 @@
 
   // ---------------------------------------------------------------- render
   function render(primeraVez) {
+    plegables = 0;
     if (observador) observador.disconnect();
     if (!primeraVez) raiz.classList.add('sin-entrada');
     $('#inicio').innerHTML = portada();
@@ -603,6 +621,17 @@
   }
 
   document.addEventListener('click', (evento) => {
+    const boton = evento.target.closest('[data-plegable]');
+    if (boton) {
+      const caja = boton.closest('.plegable');
+      const abierto = caja.dataset.abierto !== 'true';
+      caja.dataset.abierto = abierto;
+      boton.setAttribute('aria-expanded', abierto);
+      boton.textContent = abierto ? boton.dataset.cerrar : boton.dataset.abrir;
+      if (abierto) caja.querySelectorAll('[data-revelar]').forEach((e) => e.classList.add('visible'));
+      return;
+    }
+
     const interruptor = evento.target.closest('[data-interruptor]');
     if (interruptor) return alternarArea(interruptor.dataset.interruptor);
 

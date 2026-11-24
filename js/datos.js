@@ -64,6 +64,10 @@ window.DATOS = {
     capturaCobertura: { es: 'Municipios coloreados según su distancia a la estación más cercana', en: 'Municipalities shaded by distance to the nearest station' },
     capturaSimulacion: { es: 'Estación simulada con su radio y los municipios que ganaría', en: 'Simulated station with its radius and the municipalities it would cover' },
     otros: { es: 'Más proyectos', en: 'More projects' },
+    verDetalles: { es: 'Ver detalles técnicos', en: 'See technical details' },
+    ocultarDetalles: { es: 'Ocultar detalles técnicos', en: 'Hide technical details' },
+    seguirLeyendo: { es: 'Seguir leyendo', en: 'Keep reading' },
+    leerMenos: { es: 'Leer menos', en: 'Read less' },
     sinProbar: { es: 'Sin probar en real', en: 'Not field-tested' },
     codigoAbierto: { es: 'Código abierto', en: 'Open source' },
     codigoAbiertoIntro: {

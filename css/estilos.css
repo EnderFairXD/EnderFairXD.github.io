@@ -90,7 +90,7 @@ button { font: inherit; color: inherit; }
 ::selection { background: var(--accent); color: var(--accent-ink); }
 :focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
 .vh { /* texto solo para lectores de pantalla */
-  position: absolute !important; width: 1px; height: 1px; margin: -1px; padding: 0;
+  position: absolute !important; width: 1px; height: 1px; margin: -1px; padding: 0; /* taste-skill-ignore: solo lectores de pantalla */
   overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
 }
 .tabular { font-variant-numeric: tabular-nums lining-nums; }
@@ -442,12 +442,12 @@ button { font: inherit; color: inherit; }
 .transportes { display: grid; gap: 0; }
 .transportes li {
   display: grid; grid-template-columns: auto 1fr auto; gap: 14px; align-items: center;
-  padding: 14px 0; border-top: 1px solid color-mix(in srgb, var(--ink) 14%, transparent);
+  padding: 14px 0; border-top: 1px solid color-mix(in srgb, var(--ink) 14%, transparent); /* taste-skill-ignore: fragmento data-ui */
 }
-.transportes li:last-child { border-bottom: 1px solid color-mix(in srgb, var(--ink) 14%, transparent); }
+.transportes li:last-child { border-bottom: 1px solid color-mix(in srgb, var(--ink) 14%, transparent); } /* taste-skill-ignore: fragmento data-ui */
 .transportes .orden { color: var(--muted); font-variant-numeric: tabular-nums; }
 .estado { font-size: 13px; padding: 2px 10px; border-radius: 999px; background: var(--ink); color: var(--bg); }
-.estado--pendiente { background: transparent; color: var(--muted); box-shadow: inset 0 0 0 1px var(--muted); }
+.estado--pendiente { background: transparent; color: var(--muted); box-shadow: inset 0 0 0 1px var(--muted); } /* taste-skill-ignore: fragmento data-ui */
 .transportes li.pendiente { color: var(--muted); }
 .flujo { display: grid; gap: 0; }
 .flujo li { position: relative; padding: 0 0 26px 30px; }
@@ -485,7 +485,7 @@ button { font: inherit; color: inherit; }
 .precios__aviso {
   position: absolute; pointer-events: none; transform: translate(-50%, -100%);
   background: var(--ink); color: var(--bg); font-size: 13px; padding: 6px 10px; white-space: nowrap;
-  box-shadow: 0 6px 18px rgb(0 0 0 / 0.18); /* tooltip flotante */
+  box-shadow: 0 6px 18px rgb(0 0 0 / 0.18); /* taste-skill-ignore: tooltip flotante */
 }
 .precios__nota { margin-top: 14px; color: var(--muted); font-size: 14px; }
 .precios__nota strong { color: var(--ink); font-weight: 500; }
@@ -632,6 +632,40 @@ button { font: inherit; color: inherit; }
   .pie__correo { font-size: 11.4vw; }
   .pie__meta { grid-template-columns: 1fr; font-size: 13px; }
   .pie__meta > * { text-align: left !important; }
+}
+
+/* ==========================================================================
+   Plegables: en ordenador no existen para la maquetación; en móvil se abren con un botón
+   ========================================================================== */
+.plegable, .plegable__contenido { display: contents; }
+.plegable__boton { display: none; }
+.relato__problema { order: -1; }
+.relato__decisiones { order: 1; }
+.sobre-mi__texto .plegable__contenido > p { margin: 0; }
+@media (max-width: 700px) {
+  .plegable { display: block; }
+  .plegable__contenido { display: grid; gap: 28px; margin-top: 20px; }
+  .plegable--texto .plegable__contenido { gap: 1.1em; margin-top: 1.1em; }
+  .plegable[data-abierto='false'] .plegable__contenido { display: none; }
+  .plegable__boton {
+    display: inline-flex; align-items: center; gap: 0.4em; min-height: 44px; padding: 10px 18px;
+    border: 0; border-radius: 999px; cursor: pointer; font-size: 15px; font-weight: 500;
+    background: color-mix(in srgb, var(--ink) 8%, transparent); color: var(--ink);
+  }
+  .plegable__boton::after { content: '↓'; transition: transform 250ms var(--ease-out); }
+  .plegable[data-abierto='true'] .plegable__boton::after { transform: rotate(180deg); }
+  .plegable--texto .plegable__boton { margin-top: 4px; justify-self: start; }
+
+  /* Galería de GEOgis: carrusel horizontal para deslizar con el dedo */
+  .galeria {
+    display: flex; gap: 12px; overflow-x: auto; scroll-snap-type: x mandatory;
+    margin-inline: calc(var(--m) * -1); padding: 0 var(--m) 8px; overscroll-behavior-x: contain;
+  }
+  .galeria figure { flex: 0 0 86%; scroll-snap-align: start; }
+}
+@media print {
+  .plegable__contenido { display: grid !important; }
+  .plegable__boton { display: none !important; }
 }
 
 /* Sin JavaScript: fuera las secciones vacías y los controles que no funcionarían */
