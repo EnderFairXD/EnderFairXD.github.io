@@ -50,6 +50,12 @@ npm test
 
 Regenera `js/repos.js` (solo repos públicos) y `js/precios.js`.
 
+## Antes de subir cambios
+
+Si tocas algún CSS o JS, ejecuta `./versionar.sh`: pone en `index.html` una huella de cada archivo
+(`?v=...`) para que los navegadores descarguen la versión nueva al momento en lugar de usar su copia
+guardada. Un test falla si se te olvida. `./actualizar-repos.sh` ya lo hace por su cuenta.
+
 ## Tests
 
 ```bash

@@ -60,3 +60,6 @@ if [[ "$SOLO" != "repos" ]]; then
   escribir "$SALIDA/precios.js" PRECIOS "$precios"
   echo "Histórico de precios escrito en $SALIDA/precios.js"
 fi
+
+# Los datos han cambiado: actualizar las huellas de index.html (solo si se escribió en la web).
+if [[ "$SALIDA" == "$(dirname "$0")/js" ]]; then "$(dirname "$0")/versionar.sh"; fi
