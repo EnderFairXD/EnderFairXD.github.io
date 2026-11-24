@@ -215,8 +215,8 @@ button { font: inherit; color: inherit; }
 .sobre-mi__texto p:first-of-type { color: var(--ink); }
 @media (max-width: 800px) {
   .sobre-mi { grid-template-columns: 1fr; row-gap: 48px; }
-  .sobre-mi__texto { order: -1; max-width: none; }
-  .sobre-mi__texto p { font-size: 19px; }
+  .sobre-mi__texto { max-width: none; }
+  .sobre-mi__texto p { font-size: 17px; line-height: 1.6; }
   .sobre-mi__lado { padding-right: 0; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: start; gap: 20px; }
   .datos-rapidos { gap: 14px; }
   .datos-rapidos dd { font-size: 14px; }
